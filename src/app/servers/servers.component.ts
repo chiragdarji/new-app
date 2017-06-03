@@ -20,7 +20,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer(){
-     this.serverLocation = 'The server is created at India, Pune'
+     this.serverLocation = 'The server is created at India, Pune and server name is ' + this.serverName;
   }
 
   onServerNameCreation(event: Event){
