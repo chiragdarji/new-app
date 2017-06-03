@@ -1,3 +1,26 @@
-<button class="btn btn-primary" [disabled]="!allowAddNewServer">Add New Server</button>
-<p>Server ID : {{serverId}}</p>
-<p>Server Status : {{serverStatus}}</p>
+<div class="col-xs-6">
+  <label class="control-label">Server Name(One way binding)</label>
+  <input class="form-control"
+    type="text"
+    (input)="onServerNameCreation($event)"
+  >
+</div>
+<div class="col-xs-6">
+  <label class="control-label">Server Name(Two way binding)</label>
+  <input  class="form-control" type="text" [(ngModel)]="serverName">
+</div>
+<div class="col-xs-12">
+  <hr>
+  <button class="btn btn-primary"
+          [disabled]="!allowAddNewServer"
+          (click)="onCreateServer()"
+    >Add New Server</button>
+</div>
+<div class="col-xs-12">
+  <hr>
+  <p>Sever Name: {{serverName}}</p>
+  <p>Server ID : {{serverId}}</p>
+  <p>Server Status : {{serverStatus}}</p>
+  <p [innerText]="serverLocation"></p>
+</div>
+

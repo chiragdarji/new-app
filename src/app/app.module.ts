@@ -1,9 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {ErrorComponent} from './alert/error/error.component'
-import {WarningComponent} from './alert/warning/warning.component';
+import { ErrorComponent } from './alert/error/error.component'
+import { WarningComponent } from './alert/warning/warning.component';
 import { ServersComponent } from './servers/servers.component';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ServersComponent } from './servers/servers.component';
     ServersComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
