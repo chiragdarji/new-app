@@ -12,15 +12,16 @@
 <div class="col-xs-12">
   <br>
   <button class="btn btn-primary pull-right"
-          [disabled]="!allowAddNewServer"
+          [disabled]="serverName === ''"
           (click)="onCreateServer()"
     >Add New Server</button>
 </div>
 <div class="col-xs-12">
   <hr>
-  <p [innerText]="serverLocation"></p>
-  <p>Server ID : {{serverId}}</p>
-  <p>Server Status : {{serverStatus}}</p>
-
+  <p *ngIf="serverCreated; else noServer" [innerText]="serverLocation"></p>
+  <ng-template #noServer>
+    <p>No server is present now!</p>
+  </ng-template>
+  <app-server *ngFor="let server of serversList; let i = index">{{ i }}</app-server>
 </div>
 

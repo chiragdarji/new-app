@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-servers',
@@ -11,21 +10,25 @@ export class ServersComponent implements OnInit {
   serverStatus = "offline";
   allowAddNewServer = false;
   serverLocation= 'The server is not present!';
-  serverName = 'X-MAN Server';
+  serverName = '';
+  serverCreated = false;
+  serversList = ['Server 1', 'Server 2'];
 
-  constructor() {
-     setTimeout(() => {
-        this.allowAddNewServer = true;
-     }, 2000)
-  }
 
   onCreateServer(){
      this.serverLocation = 'The server is created at India, Pune and server name is ' + this.serverName;
+     this.serverName = '';
+     this.serversList.push(this.serverName);
+     this.serverCreated = true;
   }
 
   onServerNameCreation(event: Event){
     this.serverName = (<HTMLInputElement>event.target).value;
   }
+
+  constructor() {
+  }
+
 
   ngOnInit() {
 
