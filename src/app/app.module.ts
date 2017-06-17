@@ -6,7 +6,10 @@ import { AppComponent } from './app.component';
 import { ErrorComponent } from './alert/error/error.component'
 import { WarningComponent } from './alert/warning/warning.component';
 import { ServersComponent } from './servers/servers.component';
-import { ServerComponent } from './server/server.component'
+import { ServerComponent } from './server/server.component';
+import { GameControlComponent } from './game-control/game-control.component';
+import { OddComponent } from './odd/odd.component';
+import { EvenComponent } from './even/even.component'
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ServerComponent } from './server/server.component'
     ErrorComponent,
     WarningComponent,
     ServersComponent,
-    ServerComponent
+    ServerComponent,
+    GameControlComponent,
+    OddComponent,
+    EvenComponent
   ],
   imports: [
     BrowserModule,
